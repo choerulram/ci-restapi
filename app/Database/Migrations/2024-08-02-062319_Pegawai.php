@@ -35,13 +35,21 @@ class Pegawai extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '25',
             ],
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
         ]);
         $this->forge->addKey('id', true); 
-        $this->forge->createTable('blog');
+        $this->forge->createTable('pegawai');
     }
 
     public function down()
     {
-        $this->forge->dropTable('blog');
+        $this->forge->dropTable('pegawai');
     }
 }
